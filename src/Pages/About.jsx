@@ -671,6 +671,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import event1 from "../assets/event3.jpg";
 
 const About = () => {
   return (
@@ -696,7 +697,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <img
-          src="https://www.balajidecorater.com/images/event-16.jpeg"
+          src={event1}
           alt="HighLight Enterprises Event"
           className="absolute inset-0 w-full h-full object-cover"
         />

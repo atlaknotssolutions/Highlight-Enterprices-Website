@@ -946,24 +946,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-black border-t border-white/10">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to create magic together?
-          </h2>
-          <p className="text-xl text-gray-400 mb-10">
-            Let's turn your vision into an unforgettable celebration.
-          </p>
-
-          <Link
-            to="/contact"
-            className="inline-block bg-linear-to-r from-orange-500 via-amber-500 to-red-500 hover:brightness-110 transition px-10 py-5 rounded-full text-lg font-semibold"
-          >
-            Start Planning Your Event
-          </Link>
-        </div>
-      </section>
+     
     </main>
   );
 };

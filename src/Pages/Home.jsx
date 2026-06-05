@@ -27,10 +27,10 @@
 //               HIGHLIGHT ENTERPRISES
 //             </span>
 //             <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-//               Where your event vision meets flawless décor execution
+//               Where your event vision meets flawless decoration execution
 //             </h1>
 //             <p className="max-w-2xl text-lg text-gray-300 sm:text-xl">
-//               End-to-end décor & event design for weddings, social celebrations
+//               End-to-end decoration & event design for weddings, social celebrations
 //               and corporate shows — planned with precision, executed with style.
 //             </p>
 //             <div className="flex flex-col gap-4 sm:flex-row">
@@ -106,7 +106,7 @@
 //               events that feel effortless and look spectacular.
 //             </p>
 //             <ul className="space-y-3 text-gray-300">
-//               <li>• Bespoke décor & thematic styling</li>
+//               <li>• Bespoke decoration & thematic styling</li>
 //               <li>• One-stop vendor coordination</li>
 //               <li>• Timeline & budget discipline</li>
 //             </ul>
@@ -308,7 +308,7 @@ const faqs = [
   },
   {
     q: "Do you provide complete end-to-end event management?",
-    a: "Yes. We offer full-service décor, vendor coordination, timeline management, on-site execution, and post-event support.",
+    a: "Yes. We offer full-service decoration, vendor coordination, timeline management, on-site execution, and post-event support.",
   },
   {
     q: "What is your service area?",
@@ -331,7 +331,7 @@ function Home() {
         <title>HighLight Enterprises | Best Event Decorators in Madhya Pradesh</title>
         <meta
           name="description"
-          content="Premium event decoration & management services in MP. Weddings, corporate events, receptions & more. Bespoke décor with flawless execution."
+          content="Premium event decoration & management services in MP. Weddings, corporate events, receptions & more. Bespoke decoration with flawless execution."
         />
         <meta
           name="keywords"
@@ -340,7 +340,7 @@ function Home() {
         <meta property="og:title" content="HighLight Enterprises | Premium Event Decorators in MP" />
         <meta
           property="og:description"
-          content="Where your event vision meets flawless décor execution. Weddings, Corporate & Social Events in Madhya Pradesh."
+          content="Where your event vision meets flawless decoration execution. Weddings, Corporate & Social Events in Madhya Pradesh."
         />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -363,7 +363,7 @@ function Home() {
 
 <p className="max-w-2xl text-lg text-gray-300 sm:text-xl">
   From elegant weddings and grand celebrations to impactful corporate events,
-  we create stunning décor and seamless experiences tailored to your vision.
+  we create stunning decoration and seamless experiences tailored to your vision.
 </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
@@ -386,18 +386,21 @@ function Home() {
       <section className="border-t border-white/10 bg-[#050505] py-16">
         <div className="mx-auto max-w-7xl px-6 grid gap-6 lg:grid-cols-3">
           <div className="rounded-3xl bg-white/5 p-8">
-            <p className="text-sm uppercase tracking-[0.35em] text-purple-300">
-              Loved by clients.
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold">
-              Recognized by the industry.
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-gray-300">
-              We’re proud to be acknowledged by clients, publications and
-              partners. It keeps us grounded in our values — craftsmanship,
-              integrity and unforgettable experiences.
-            </p>
-          </div>
+  <p className="text-sm uppercase tracking-[0.35em] text-purple-300">
+    Trusted by Clients
+  </p>
+
+  <h2 className="mt-4 text-3xl font-semibold">
+    Delivering Excellence, Event After Event
+  </h2>
+
+  <p className="mt-4 text-sm leading-7 text-gray-300">
+    Our commitment to creativity, quality, and flawless execution has earned
+    the trust of clients across weddings, social celebrations, and corporate
+    events. Every project is crafted with attention to detail and a passion
+    for creating memorable experiences.
+  </p>
+</div>
           <div className="rounded-3xl bg-white/5 p-8">
             <p className="text-sm uppercase tracking-[0.35em] text-purple-300">
               Trusted partner
@@ -438,7 +441,7 @@ function Home() {
               events that feel effortless and look spectacular.
             </p>
             <ul className="space-y-3 text-gray-300">
-              <li>• Bespoke décor & thematic styling</li>
+              <li>• Bespoke decoration & thematic styling</li>
               <li>• One-stop vendor coordination</li>
               <li>• Timeline & budget discipline</li>
             </ul>

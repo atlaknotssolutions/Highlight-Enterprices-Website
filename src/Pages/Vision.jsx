@@ -403,11 +403,10 @@
 // };
 
 // export default Vision;
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const visionGalleryImages = [
   "https://www.balajidecorater.com/images/event-23.jpeg",
@@ -417,6 +416,15 @@ const visionGalleryImages = [
 
 const Vision = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % visionGalleryImages.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % visionGalleryImages.length);
@@ -432,6 +440,7 @@ const Vision = () => {
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
+
   return (
     <main className="bg-black text-white font-sans">
       <Helmet>
@@ -460,7 +469,7 @@ const Vision = () => {
       {/* Hero Banner */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-500"
+          className="absolute inset-0 bg-cover bg-center transition-all duration-700"
           style={{
             backgroundImage: `url(${visionGalleryImages[currentSlide]})`,
           }}

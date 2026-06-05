@@ -407,11 +407,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useState, useEffect } from "react";
-
+import event1 from "../assets/event1.jpg";
+import event2 from "../assets/event2.jpg";
+import event3 from "../assets/event3.jpg";
+import event4 from "../assets/event4.jpg";
+import event5 from "../assets/event5.jpg";
+import event6 from "../assets/event6.jpg";
 const visionGalleryImages = [
-  "https://www.balajidecorater.com/images/event-23.jpeg",
-  "https://www.balajidecorater.com/images/event-1.jpeg",
-  "https://www.balajidecorater.com/images/event-16.jpeg",
+  event3,
+  event6,
+  event3,
+  event4
 ];
 
 const Vision = () => {

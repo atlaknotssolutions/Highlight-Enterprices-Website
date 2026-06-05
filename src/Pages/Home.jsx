@@ -296,6 +296,7 @@ const galleryImages = [
   "https://www.balajidecorater.com/images/event-16.jpeg",
 ];
 
+
 const faqs = [
   {
     q: "What types of events do you handle?",

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ContactForm from "../Component/ContactForm";
 
 const heroImages = [
@@ -47,6 +47,15 @@ const faqs = [
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Auto slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroImages.length);
   };
@@ -88,7 +97,7 @@ function Home() {
 
       <section className="relative overflow-hidden pt-24">
         <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-500"
+          className="absolute inset-0 bg-cover bg-center transition-all duration-700"
           style={{ backgroundImage: `url(${heroImages[currentSlide]})` }}
         />
         <div className="absolute inset-0 bg-black/70" />

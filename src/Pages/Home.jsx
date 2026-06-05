@@ -350,7 +350,48 @@ function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+     
+
+      <section className="bg-black text-white font-sans">
+        {/* Contact Banner */}
+        <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
+          <img
+            src="https://www.balajidecorater.com/images/event-25.jpeg"
+            alt="Event Tent Setup"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/75 to-black/90" />
+
+          <div className="relative z-10 text-center px-6 max-w-4xl">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
+              Let's design your event
+            </h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Tell us a bit about your celebration and we'll get back within 24
+              hours.
+            </p>
+          </div>
+        </section>
+
+        {/* Form Section */}
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - Image */}
+            <div className="rounded-3xl overflow-hidden shadow-2xl h-full min-h-125 lg:min-h-162.5">
+              <img
+                src="https://www.balajidecorater.com/images/event-25.jpeg"
+                alt="Luxury Event Tent"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Right Side - Form */}
+            <ContactForm />
+          </div>
+        </section>
+      </section>
+
+       {/* FAQ Section */}
       <section className="border-t border-white/10 bg-black py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-12">
@@ -394,45 +435,6 @@ function Home() {
             </Link>
           </div>
         </div>
-      </section>
-
-      <section className="bg-black text-white font-sans">
-        {/* Contact Banner */}
-        <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
-          <img
-            src="https://www.balajidecorater.com/images/event-25.jpeg"
-            alt="Event Tent Setup"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/75 to-black/90" />
-
-          <div className="relative z-10 text-center px-6 max-w-4xl">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
-              Let's design your event
-            </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Tell us a bit about your celebration and we'll get back within 24
-              hours.
-            </p>
-          </div>
-        </section>
-
-        {/* Form Section */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Side - Image */}
-            <div className="rounded-3xl overflow-hidden shadow-2xl h-full min-h-125 lg:min-h-162.5">
-              <img
-                src="https://www.balajidecorater.com/images/event-25.jpeg"
-                alt="Luxury Event Tent"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Right Side - Form */}
-            <ContactForm />
-          </div>
-        </section>
       </section>
     </main>
   );

@@ -237,12 +237,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
+
+const missionGalleryImages = [
+  "https://www.balajidecorater.com/images/event-16.jpeg",
+  "https://www.balajidecorater.com/images/event-1.jpeg",
+  "https://www.balajidecorater.com/images/event-16.jpeg",
+];
 
 const Mission = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % missionGalleryImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) =>
+        (prev - 1 + missionGalleryImages.length) % missionGalleryImages.length,
+    );
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
   return (
     <main className="bg-black text-white font-sans">
       <Helmet>
-        <title>Our Mission | HighLight Enterprises - Best Event Decorators in Madhya Pradesh</title>
+        <title>
+          Our Mission | HighLight Enterprises - Best Event Decorators in Madhya
+          Pradesh
+        </title>
         <meta
           name="description"
           content="Our mission is to deliver exceptional event décor and management services in Madhya Pradesh. Trusted partner for weddings, corporate events & social celebrations with flawless execution."
@@ -251,7 +277,10 @@ const Mission = () => {
           name="keywords"
           content="highlight enterprises mission, event decorators bhopal, wedding planners madhya pradesh, corporate event management indore, best event company mp, mission of highlight enterprises"
         />
-        <meta property="og:title" content="Our Mission | HighLight Enterprises" />
+        <meta
+          property="og:title"
+          content="Our Mission | HighLight Enterprises"
+        />
         <meta
           property="og:description"
           content="Turning your vision into a remarkable reality with precision and creativity."
@@ -261,12 +290,47 @@ const Mission = () => {
 
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-        <img
-          src="https://www.balajidecorater.com/images/event-1.jpeg"
-          alt="Grand Stage Setup"
-          className="absolute inset-0 w-full h-full object-cover"
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-all duration-500"
+          style={{
+            backgroundImage: `url(${missionGalleryImages[currentSlide]})`,
+          }}
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/70 to-black/90" />
+
+        {/* Previous Button */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-all rounded-full p-3 text-white text-2xl"
+          aria-label="Previous slide"
+        >
+          ❮
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-all rounded-full p-3 text-white text-2xl"
+          aria-label="Next slide"
+        >
+          ❯
+        </button>
+
+        {/* Slider Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+          {missionGalleryImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-3 rounded-full transition-all ${
+                index === currentSlide
+                  ? "bg-white w-8"
+                  : "bg-white/50 hover:bg-white/75 w-3"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
         <div className="relative z-10 text-center max-w-4xl px-6">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
@@ -404,27 +468,6 @@ const Mission = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-3 gap-6">
-          <img
-            src="https://www.balajidecorater.com/images/event-16.jpeg"
-            alt="Event Tent"
-            className="rounded-3xl w-full h-full object-cover"
-          />
-          <img
-            src="https://www.balajidecorater.com/images/event-1.jpeg"
-            alt="Outdoor Setup"
-            className="rounded-3xl w-full h-full object-cover"
-          />
-          <img
-            src="https://www.balajidecorater.com/images/event-16.jpeg"
-            alt="Grand Indoor Setup"
-            className="rounded-3xl w-full h-full object-cover"
-          />
-        </div>
-      </section>
-
       {/* FAQ Section - Same Design as Home Page */}
       <section className="border-t border-white/10 bg-black py-16">
         <div className="mx-auto max-w-7xl px-6">
@@ -470,7 +513,9 @@ const Mission = () => {
 
             <details className="group rounded-3xl bg-white/5 px-8 py-6 transition-all hover:bg-white/10">
               <summary className="flex cursor-pointer items-center justify-between text-lg font-medium list-none">
-                <span>Do you manage logistics and vendor coordination too?</span>
+                <span>
+                  Do you manage logistics and vendor coordination too?
+                </span>
                 <span className="text-2xl text-purple-400 transition-transform group-open:rotate-45">
                   +
                 </span>

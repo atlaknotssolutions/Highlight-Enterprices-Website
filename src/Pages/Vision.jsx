@@ -407,12 +407,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
+
+const visionGalleryImages = [
+  "https://www.balajidecorater.com/images/event-23.jpeg",
+  "https://www.balajidecorater.com/images/event-1.jpeg",
+  "https://www.balajidecorater.com/images/event-16.jpeg",
+];
 
 const Vision = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % visionGalleryImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) =>
+        (prev - 1 + visionGalleryImages.length) % visionGalleryImages.length,
+    );
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
   return (
     <main className="bg-black text-white font-sans">
       <Helmet>
-        <title>Our Vision | HighLight Enterprises - Event Decorators Madhya Pradesh</title>
+        <title>
+          Our Vision | HighLight Enterprises - Event Decorators Madhya Pradesh
+        </title>
         <meta
           name="description"
           content="Discover the vision behind HighLight Enterprises. We create exceptional events with creativity, precision, and hospitality across Madhya Pradesh."
@@ -421,7 +446,10 @@ const Vision = () => {
           name="keywords"
           content="highlight enterprises vision, event design philosophy mp, best event decorators bhopal, wedding vision indore, corporate event vision madhya pradesh"
         />
-        <meta property="og:title" content="Our Vision | HighLight Enterprises" />
+        <meta
+          property="og:title"
+          content="Our Vision | HighLight Enterprises"
+        />
         <meta
           property="og:description"
           content="Designing events that consistently exceed expectations across Madhya Pradesh."
@@ -431,13 +459,47 @@ const Vision = () => {
 
       {/* Hero Banner */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-all duration-500"
+          style={{
+            backgroundImage: `url(${visionGalleryImages[currentSlide]})`,
+          }}
+        />
         <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/70 to-black" />
 
-        <img
-          src="https://www.balajidecorater.com/images/event-23.jpeg"
-          alt="Event Stage"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        {/* Previous Button */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-all rounded-full p-3 text-white text-2xl"
+          aria-label="Previous slide"
+        >
+          ❮
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-all rounded-full p-3 text-white text-2xl"
+          aria-label="Next slide"
+        >
+          ❯
+        </button>
+
+        {/* Slider Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+          {visionGalleryImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-3 rounded-full transition-all ${
+                index === currentSlide
+                  ? "bg-white w-8"
+                  : "bg-white/50 hover:bg-white/75 w-3"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <p className="text-sm uppercase tracking-widest text-purple-400 mb-4">

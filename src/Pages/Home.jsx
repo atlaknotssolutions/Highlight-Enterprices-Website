@@ -2,11 +2,18 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useState, useEffect } from "react";
 import ContactForm from "../Component/ContactForm";
+import event1 from "../assets/event1.jpg";
+import event2 from "../assets/event2.jpg";
+import event3 from "../assets/event3.jpg";
+import event4 from "../assets/event3.jpg";
+
+import event5 from "../assets/event3.jpg";
+
 
 const heroImages = [
-  "https://www.balajidecorater.com/images/event-4.jpeg",
-  "https://www.balajidecorater.com/images/event-23.jpeg",
-  "https://www.balajidecorater.com/images/event-25.jpeg",
+  event1,
+  event2,
+  event3,
 ];
 const galleryImages = [
   "https://www.balajidecorater.com/images/event-20.jpeg",

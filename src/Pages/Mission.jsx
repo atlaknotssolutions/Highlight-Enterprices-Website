@@ -237,7 +237,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const missionGalleryImages = [
   "https://www.balajidecorater.com/images/event-16.jpeg",
@@ -247,6 +247,15 @@ const missionGalleryImages = [
 
 const Mission = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % missionGalleryImages.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % missionGalleryImages.length);
@@ -262,6 +271,7 @@ const Mission = () => {
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
+
   return (
     <main className="bg-black text-white font-sans">
       <Helmet>
@@ -291,7 +301,7 @@ const Mission = () => {
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-500"
+          className="absolute inset-0 bg-cover bg-center transition-all duration-700"
           style={{
             backgroundImage: `url(${missionGalleryImages[currentSlide]})`,
           }}
@@ -347,6 +357,7 @@ const Mission = () => {
           </p>
         </div>
       </section>
+    
 
       {/* Our Mission Section */}
       <section className="max-w-7xl mx-auto px-6 py-20">

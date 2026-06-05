@@ -357,13 +357,14 @@ function Home() {
             <span className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.4em] text-purple-300">
               HIGHLIGHT ENTERPRISES
             </span>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Where your event vision meets flawless décor execution
-            </h1>
-            <p className="max-w-2xl text-lg text-gray-300 sm:text-xl">
-              End-to-end décor & event design for weddings, social celebrations
-              and corporate shows — planned with precision, executed with style.
-            </p>
+         <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+  Transforming Ideas into Extraordinary Event Experiences
+</h1>
+
+<p className="max-w-2xl text-lg text-gray-300 sm:text-xl">
+  From elegant weddings and grand celebrations to impactful corporate events,
+  we create stunning décor and seamless experiences tailored to your vision.
+</p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 to="/contact"

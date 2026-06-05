@@ -5,9 +5,11 @@ import ContactForm from "../Component/ContactForm";
 import event1 from "../assets/event1.jpg";
 import event2 from "../assets/event2.jpg";
 import event3 from "../assets/event3.jpg";
-import event4 from "../assets/event3.jpg";
+import event4 from "../assets/event4.jpg";
 
-import event5 from "../assets/event3.jpg";
+import event5 from "../assets/event5.jpg";
+import event6 from "../assets/event6.jpg";
+
 
 
 const heroImages = [
@@ -16,12 +18,12 @@ const heroImages = [
   event3,
 ];
 const galleryImages = [
-  "https://www.balajidecorater.com/images/event-20.jpeg",
-  "https://www.balajidecorater.com/images/event-21.jpeg",
-  "https://www.balajidecorater.com/images/event-22.jpeg",
-  "https://www.balajidecorater.com/images/event-23.jpeg",
-  "https://www.balajidecorater.com/images/event-25.jpeg",
-  "https://www.balajidecorater.com/images/event-16.jpeg",
+  event1,
+  event2,
+  event3,
+  event4,
+  event5,
+  event6,
 ];
 
 const faqs = [
@@ -368,11 +370,11 @@ function Home() {
 
      
 
-      <section className="bg-black text-white font-sans">
+      
         {/* Contact Banner */}
         <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
           <img
-            src="https://www.balajidecorater.com/images/event-25.jpeg"
+            src={event5}
             alt="Event Tent Setup"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -390,22 +392,55 @@ function Home() {
         </section>
 
         {/* Form Section */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Side - Image */}
-            <div className="rounded-3xl overflow-hidden shadow-2xl h-full min-h-125 lg:min-h-162.5">
-              <img
-                src="https://www.balajidecorater.com/images/event-25.jpeg"
-                alt="Luxury Event Tent"
-                className="w-full h-full object-cover"
-              />
-            </div>
+       <section className="max-w-6xl mx-auto px-6 py-16">
+  <div className="grid md:grid-cols-2 gap-12 items-start">
+    
+    {/* Left Side - Address & Map */}
+    <ContactForm />
 
-            {/* Right Side - Form */}
-            <ContactForm />
+    {/* Right Side - Form */}
+    <div>
+      
+
+
+
+
+
+
+      <div className="space-y-8">
+      <div>
+        <h2 className="text-3xl font-bold mb-6 text-gray-900">Get in Touch</h2>
+        
+        <div className="space-y-4 text-gray-700">
+          <div className="flex gap-3">
+            <div className="w-6 h-6 mt-1">📍</div>
+            <div>
+              <p className="font-medium">Our Office</p>
+              <p>H.No 2/1, Behind Goyal Dham Apartment</p>
+              <p>Idgah Hills, Shahjahanabad</p>
+              <p>Bhopal, Madhya Pradesh - 462001</p>
+            </div>
           </div>
-        </section>
-      </section>
+        </div>
+      </div>
+
+      {/* Google Maps Embed */}
+      <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+        <iframe
+          src="https://www.google.com/maps?q=H.no+2/1+behind+Goyal+Dham+Apartment+Idgah+Hills+Shahjahanabad+Bhopal+MP&output=embed"
+          width="100%"
+          height="380"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Our Location"
+        ></iframe>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
 
        {/* FAQ Section */}
       <section className="border-t border-white/10 bg-black py-16">

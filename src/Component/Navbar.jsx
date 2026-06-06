@@ -69,7 +69,7 @@ const navLinks = [
   { to: "/about", label: "About" },
   { to: "/vision", label: "Our Vision" },
   { to: "/mission", label: "Our Mission" },
-  { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "Contact Us" },
 ];
 
 const Navbar = () => {
@@ -84,13 +84,13 @@ const Navbar = () => {
         
         {/* Logo */}
         <NavLink to="/" className="flex items-center gap-3" onClick={closeMenu}>
-          <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center">
-            <img
-              src={Highlight_logo}
-              alt="HighLight Enterprises"
-              className="w-10 h-10 object-contain"
-            />
-          </div>
+        <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center">
+  <img
+    src={Highlight_logo}
+    alt="HighLight Enterprises"
+    className="w-28 h-28 object-contain"
+  />
+</div>
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-white/70">
               HighLight

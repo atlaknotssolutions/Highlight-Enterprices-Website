@@ -12,10 +12,27 @@ import event6 from "../assets/event6.jpg";
 
 
 
+
+
 const heroImages = [
-  event1,
-  event2,
-  event3,
+  {
+    image: event1,
+    title: "Transforming Ideas into Extraordinary Event Experiences",
+    description:
+      "From elegant weddings and grand celebrations to impactful corporate events, we create stunning decoration and seamless experiences tailored to your vision.",
+  },
+  {
+    image: event2,
+    title: "Creating Unforgettable Wedding Celebrations",
+    description:
+      "Elegant wedding decoration, creative themes, and flawless execution designed to make your special day truly memorable.",
+  },
+  {
+    image: event3,
+    title: "Premium Corporate Event Solutions",
+    description:
+      "Professional stage setups, branding experiences, conferences, and corporate events that leave a lasting impression.",
+  },
 ];
 const galleryImages = [
   event1,
@@ -25,6 +42,8 @@ const galleryImages = [
   event5,
   event6,
 ];
+
+
 
 const faqs = [
   {
@@ -104,78 +123,88 @@ function Home() {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <section className="relative overflow-hidden pt-24">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-700"
-          style={{ backgroundImage: `url(${heroImages[currentSlide]})` }}
-        />
-        <div className="absolute inset-0 bg-black/70" />
+     <section className="relative overflow-hidden pt-24">
+  <div
+    className="absolute inset-0 bg-cover bg-center transition-all duration-700"
+    style={{
+      backgroundImage: `url(${heroImages[currentSlide].image})`,
+    }}
+  />
 
-        {/* Previous Button */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-all rounded-full p-3 text-white text-2xl"
-          aria-label="Previous slide"
+  <div className="absolute inset-0 bg-black/70" />
+
+  {/* Previous Button */}
+  <button
+    onClick={prevSlide}
+    className="absolute left-6 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 text-2xl text-white transition-all hover:bg-white/40"
+    aria-label="Previous slide"
+  >
+    ❮
+  </button>
+
+  {/* Next Button */}
+  <button
+    onClick={nextSlide}
+    className="absolute right-6 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 text-2xl text-white transition-all hover:bg-white/40"
+    aria-label="Next slide"
+  >
+    ❯
+  </button>
+
+  <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-28">
+    <div className="w-full space-y-8">
+      <span className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.4em] text-purple-300">
+        HIGHLIGHT ENTERPRISES
+      </span>
+
+      <h1
+        key={`title-${currentSlide}`}
+        className="max-w-6xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+      >
+        {heroImages[currentSlide].title}
+      </h1>
+
+      <p
+        key={`desc-${currentSlide}`}
+        className="max-w-5xl text-lg text-gray-300 sm:text-xl lg:text-2xl"
+      >
+        {heroImages[currentSlide].description}
+      </p>
+
+      <div className="flex flex-col gap-4 sm:flex-row">
+        <Link
+          to="/contact"
+          className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-purple-500 via-pink-500 to-rose-500 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition hover:brightness-110"
         >
-          ❮
-        </button>
+          Contact Us
+        </Link>
 
-        {/* Next Button */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-all rounded-full p-3 text-white text-2xl"
-          aria-label="Next slide"
+        <Link
+          to="/about"
+          className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
         >
-          ❯
-        </button>
+          Read More
+        </Link>
+      </div>
+    </div>
+  </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-28">
-          <div className="max-w-3xl space-y-8">
-            <span className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.4em] text-purple-300">
-              HIGHLIGHT ENTERPRISES
-            </span>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Transforming Ideas into Extraordinary Event Experiences
-            </h1>
-
-            <p className="max-w-2xl text-lg text-gray-300 sm:text-xl">
-              From elegant weddings and grand celebrations to impactful
-              corporate events, we create stunning decoration and seamless
-              experiences tailored to your vision.
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-purple-500 via-pink-500 to-rose-500 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition hover:brightness-110"
-              >
-                Contact Us
-              </Link>
-              <Link
-                to="/about"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
-              >
-                Read More
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Slider Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-3 rounded-full transition-all ${
-                index === currentSlide
-                  ? "bg-white w-8"
-                  : "bg-white/50 hover:bg-white/75 w-3"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      </section>
+  {/* Slider Dots */}
+  <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-3">
+    {heroImages.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => goToSlide(index)}
+        className={`h-3 rounded-full transition-all ${
+          index === currentSlide
+            ? "w-8 bg-white"
+            : "w-3 bg-white/50 hover:bg-white/75"
+        }`}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+    ))}
+  </div>
+</section>
 
       <section className="border-t border-white/10 bg-[#050505] py-16">
         <div className="mx-auto max-w-7xl px-6 grid gap-6 lg:grid-cols-3">

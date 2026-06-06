@@ -349,7 +349,7 @@ const Mission = () => {
           ))}
         </div>
 
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="relative z-10 mt-20 text-center max-w-4xl px-6">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
             Turning your vision into a remarkable reality
           </h1>

@@ -707,11 +707,7 @@ const About = () => {
         <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,#f97316_0,#f97316_40px,transparent_40px,transparent_80px)] opacity-10" />
 
         <div className="relative z-10 text-center max-w-4xl px-6">
-          <nav className="text-sm text-white/80 mb-6">
-            Home &gt;{" "}
-            <span className="text-white">About HighLight Enterprises</span>
-          </nav>
-
+          
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
             About HighLight Enterprises
           </h1>

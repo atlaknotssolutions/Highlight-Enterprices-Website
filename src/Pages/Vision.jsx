@@ -473,7 +473,7 @@ const Vision = () => {
       </Helmet>
 
       {/* Hero Banner */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[85vh] mt-18 flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-700"
           style={{
@@ -517,9 +517,7 @@ const Vision = () => {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <p className="text-sm uppercase tracking-widest text-purple-400 mb-4">
-            Home / Our Vision
-          </p>
+          
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
             Designing events that consistently

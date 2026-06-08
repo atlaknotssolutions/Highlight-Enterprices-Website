@@ -1,16 +1,44 @@
-# React + Vite
+# HighLight Enterprises - Event Decorators Bhopal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, elegant and fully responsive website for **HighLight Enterprises**, a premium event decoration company based in Bhopal, Madhya Pradesh.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Features
 
-## React Compiler
+- **Fully Responsive Design** – Works perfectly on mobile, tablet, and desktop
+- **Beautiful Hero Slider** with auto-play and manual controls
+- **Professional Contact Form** with **EmailJS** integration (working form)
+- **Interactive FAQ Section**
+- **Gallery Showcase**
+- **Google Maps Integration**
+- **Mobile-Friendly Navigation**
+- **Modern Dark Theme** with purple/pink gradient accents
+- **Smooth Animations & Hover Effects**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **HTML5**
+- **Tailwind CSS** (via CDN)
+- **Vanilla JavaScript**
+- **Font Awesome Icons**
+- **EmailJS** – For sending emails directly from the browser
+- **Google Maps Embed**
+
+---
+
+## 📁 Project Structure
+HighLight-Enterprises/
+├── index.html
+├── contact.html
+├── about.html
+├── vision.html
+├── mission.html
+├── assets/
+│   ├── Highlight_logo.png
+│   ├── event1.jpg
+│   ├── event2.jpg
+│   └── ... (other images)
+└── README.md
